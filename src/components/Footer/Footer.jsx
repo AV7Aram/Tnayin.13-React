@@ -1,5 +1,6 @@
 import style from './Footer.module.css';
 import { Foot } from '../Foot/Foot';
+import { FooterContent } from '../FooterContent/FooterContent';
 import paymentMethods from '../../assets/payment-methods-footer.svg';
 
 export function Footer({ footerInfo, footerIcons, footerSpan, footerA }) {
@@ -18,25 +19,7 @@ export function Footer({ footerInfo, footerIcons, footerSpan, footerA }) {
                             }
                         </ul>
                     </div>
-                    {
-                        footerIcons.map((icon, index) => {
-                            return (
-                                <div className={style.colLg3} key={index}>
-                                    <div className={style.footerBenefits}>
-                                        <i className={icon.title}></i>
-                                        <span>{footerSpan[index]}</span>
-                                        {
-                                            (index === 1 || index === 3) ? (
-                                                <a href="#">{footerA[index]}</a>
-                                            ) : (
-                                                footerA[index]
-                                            )
-                                        }
-                                    </div>
-                                </div>
-                            )
-                        })
-                    }
+                    <FooterContent footerIcons={footerIcons} footerSpan={footerSpan} footerA={footerA} />
                     <div className={style.colԼg12}>
                         <div className={style.copyright}>
                             <div className={style.paymentMethods}>
